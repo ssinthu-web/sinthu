@@ -843,6 +843,18 @@ aside {
 #hm {
   color: #123C73;
 }
-.bg-primary{
-  background-color: rgb(8, 25, 50);
+
+#AD{
+  background-color: #174be1;
+}
+
+#admin{
+  background: url('./image/admin.jpg') no-repeat center center/cover;
+}
+
+/* patient dash */
+
+
+#PDH{
+  font-weight: bold;
 }

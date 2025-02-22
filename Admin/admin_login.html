@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "carecompass_db");
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,12 +91,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="POST">
             <div class="form-label">
                 <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" required>
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
             </div>
             <div class="form-label">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
+            <div class="form-label">
+                <label class="form-label">Role</label>
+                <select name="role" class="form-control" placeholder="Choose.." required>
+                    <option value="admin">Admin</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="staff">Staff</option>
+                </select>
+                <br>
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
     </div>
