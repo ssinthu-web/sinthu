@@ -1,34 +1,46 @@
-<!-- <?php
+<?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "carecompass_db");
 
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
 
-    // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT * FROM administrators WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Use prepared statement
+    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
+    if ($stmt) {
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+       
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Verify hashed password
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['admin'] = $username;
-            header("Location: admin_dashboard.php");
-            exit();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            // Check if password is hashed
+            if ($password == $row['password']) { 
+                $_SESSION['admin'] = $username;
+                header("Location: admin_dashboard.php");
+                exit();
+            } else {
+                echo "<p style='color:red;'>Invalid credentials</p>";
+            }
         } else {
             echo "<p style='color:red;'>Invalid credentials</p>";
         }
-    } else {
-        echo "<p style='color:red;'>Invalid credentials</p>";
-    }
 
-    $stmt->close();
+        $stmt->close();
+    } else {
+        echo "Error in preparing statement.";
+    }
 }
-?> -->
+$conn->close();
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="nav-link" href="../contact.php">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./Admin/admin_login.php">Registration</a>
+                        <a class="nav-link active" href="./admin_login.php">Registration</a>
                     </li>
                 </ul>
             </div>
@@ -91,11 +103,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="POST">
             <div class="form-label">
                 <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" placeholder="Username" required>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
             </div>
             <div class="form-label">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
             </div>
             <div class="form-label">
                 <label class="form-label">Role</label>

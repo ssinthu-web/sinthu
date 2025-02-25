@@ -24,13 +24,13 @@ if (!isset($_SESSION['admin'])) {
             <h4 class="text-center py-4">Admin Dashboard</h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="doctor_management.php" class="nav-link text-white">Doctor Management</a>
+                    <a href="patient dashboard.html" class="nav-link text-white">Patient Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="doctor dashboard.php" class="nav-link text-white">Doctor Management</a>
                 </li>
                 <li class="nav-item">
                     <a href="staff_management.php" class="nav-link text-white">Staff Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="patient_management.php" class="nav-link text-white">Patient Management</a>
                 </li>
                 <li class="nav-item">
                     <a href="billing_management.php" class="nav-link text-white">Billing Management</a>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['admin'])) {
                     <a href="booking_management.php" class="nav-link text-white">Booking Management</a>
                 </li>
                 <li class="nav-item">
-                    <a href="logout.php" class="nav-link text-white">Logout</a>
+                    <a href="logout.php"class="nav-link text-white">Logout</a>
                 </li>
             </ul>
         </div>
@@ -75,33 +75,12 @@ if (!isset($_SESSION['admin'])) {
 
             <!-- Welcome Section -->
             <div class="container mt-5 text-center text-white">
-                <h2>Welcome, Admin</h2>
+                <h1 id="h2">Welcome, Admin</h1>
                 <p class="text-muted">Manage hospital operations efficiently.</p>
             </div>
 
             <!-- Quick Actions -->
-            <div class="container mt-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="card shadow-sm">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Quick Actions</h5>
-                                <p class="card-text">Select an option below to proceed.</p>
-                                <div class="list-group">
-                                    <a href="doctor_management.php" class="list-group-item list-group-item-action">Doctor Management</a>
-                                    <a href="staff_management.php" class="list-group-item list-group-item-action">Staff Management</a>
-                                    <a href="patient_management.php" class="list-group-item list-group-item-action">Patient Management</a>
-                                    <a href="billing_management.php" class="list-group-item list-group-item-action">Billing Management</a>
-                                    <a href="report_results.php" class="list-group-item list-group-item-action">Reports & Results</a>
-                                    <a href="service_management.php" class="list-group-item list-group-item-action">Service Management</a>
-                                    <a href="booking_management.php" class="list-group-item list-group-item-action">Booking Management</a>
-                                    <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
