@@ -107,7 +107,23 @@ if (isset($_POST['submit'])){
                         <label for="doctor">Select Doctor:</label>
                         <select id="doctor" name="doctor" class="form-control" required>
                         <option value="Dr. John Doe">Dr. John Doe</option>
-                        <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+                        <option value="Dr.Sabarathnam Jeyakumar">Dr.Sabarathnam Jeyakumar</option>
+                        <option value="Dr.M.I.K Naeem">Dr.M.I.K Naeem</option>
+                        <option value="Dr.Athula Feranado">Dr.Athula Feranado</option>
+                        <option value="Dr.A. Lakkumar Fernando">Dr.A. Lakkumar Fernando</option>
+                        <option value="Dr.Himali Wijesinghe">Dr.Himali Wijesinghe</option>
+                        <option value="Dr.Sandaya Doluweera">Dr.Sandaya Doluweera</option>
+                        <option value="	Dr.Ananda Piyatissa">	Dr.Ananda Piyatissa</option>
+                        <option value="Dr.A. Windsor">Dr.A. Windsor</option>
+                        <option value="Dr.N. Sritharan">Dr.N. Sritharan</option>
+                        <option value="Dr.Champa Jayamanna">Dr.Champa Jayamanna</option>
+                        <option value="Dr.Himali Wijesinghe">Dr.Himali Wijesinghe</option>
+                        <option value="Dr.Sandaya Doluweera">Dr.Sandaya Doluweera</option>
+                        <option value="Dr.Ananda Piyatissa">Dr.Ananda Piyatissa</option>
+                        <option value="Dr.A. Windsor">	Dr.A. Windsor</option>
+                        <option value="Dr. E. Rajasekaran">Dr. E. Rajasekaran</option>
+                        <option value="Dr.Asoka Wijemanna">Dr.Asoka Wijemanna</option>
+                        <option value="Dr.Saman Wijetunge">Dr.Saman Wijetunge</option>
                         </select>
                         <br>
                         <button type="submit" name="submit" class="btn btn-danger btn-lg mt-3">Book Appointment</button>

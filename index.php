@@ -42,6 +42,52 @@ $conn->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
+
+    <style>
+        /* Ensure images and text scale properly */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Custom styling for navbar */
+        .navbar-brand img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        /* Make search input fit well on all screens */
+        #searchDoctors {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Quick Links - Make sure they stack correctly */
+        .quick-links .col-md-4 {
+            margin-bottom: 20px;
+        }
+
+        /* Footer adjustments */
+        .footer .col-md-4 {
+            text-align: center;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 24px;
+            }
+
+            .hero-section p {
+                font-size: 14px;
+            }
+
+            .quick-links .col-md-4 {
+                text-align: center;
+            }
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -59,30 +105,18 @@ $conn->close();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./Admin/admin_login.php">Registration</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Admin/admin_login.php">Registration</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section py-5 bg-light">
         <div class="container">
             <h1 id="h1">Welcome to Care <br> Compass Hospital</h1>
             <p >Your trusted partner in healthcare.<br> Providing top-quality healthcare services with a patient-centered approach.<br> Our dedicated team ensures the best medical care for you and your loved ones.</p>
@@ -91,7 +125,7 @@ $conn->close();
     </section>
 
     <!-- Quick Links -->
-    <section class="quick-links py-5">
+    <section class="quick-links py-5 big-light">
         <div class="quick-links">
             <div class="row">
                 <div class="col-md-4 text-center">
@@ -160,37 +194,31 @@ $conn->close();
         <h2 class="text-center mb-4" id="h2">What Our Patients Say</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <blockquote class="blockquote">
                             <p class="mb-3">"Excellent service and caring staff.  Thank you!"</p>
                         </blockquote>
                         <h5 class="card-title">- John Doe</h5>
                         <div class="stars" aria-label="5-star rating">★★★★★</div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <blockquote class="blockquote">
                             <p class="mb-3">"The doctors are very knowledgeable and friendly."</p>
                         </blockquote>
                         <h5 class="card-title">- Jane Smith</h5>
                         <div class="stars" aria-label="5-star rating">★★★★★</div>
                     </div>
-                </div>
             </div>
             <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body text-center">
+                    <div class="card-body">
                         <blockquote class="blockquote">
                             <p class="mb-3">"Clean facilities and quick service. Thank you!"</p>
                         </blockquote>
                         <h5 class="card-title">- David Brown</h5>
                         <div class="stars" aria-label="5-star rating">★★★★★</div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

@@ -4,12 +4,16 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    height: auto;
+    max-width: 100%;
 }
 #h2{
     font-size: 3.9rem;
     font-style: inherit;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
+    height: auto;
+    max-width: 100%;
 
 }
 
@@ -59,6 +63,8 @@ a:hover {
     background: #3d3a3a;
     background-color: rgb(16, 29, 47);
     color: white;
+    max-width: 100%;
+    height: auto;
 }
 
 .navbar .logo {
@@ -73,6 +79,8 @@ a:hover {
     position: relative;
     padding: 20px 20px 0 0;
     display: inline-block;
+    max-width: 100%;
+    height: auto;
 }
 
 .nav-links {
@@ -249,6 +257,7 @@ aside {
   color: #007bff;
   margin-bottom: 30px;
   font-size: 50px;
+
 }
 
 .contact-section h3 {
@@ -287,6 +296,10 @@ aside {
 }
 
 /* Announcements */
+.announcements{
+  max-width: 100%;
+  height: auto;
+}
 .announcements .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST['password']);
 
     // Use prepared statement
-    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM user INNER JOIN role on user.roleId = role.roleId WHERE user.username = ?");
     if ($stmt) {
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -23,9 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             // Check if password is hashed
             if ($password == $row['password']) { 
-                $_SESSION['admin'] = $username;
-                header("Location: admin_dashboard.php");
-                exit();
+                if($row['role'] == "admin"){
+                  
+                    $_SESSION['admin'] = $username;
+                    header("Location: admin_dashboard.php");
+                    exit();
+                }  else if($row['role'] == "doctor"){
+                    header("Location: doctor_dashboard.php");
+                    exit();
+                }
+                 else if($row['role'] == "Staff"){
+                    header("Location: staff_dashboard.php");
+                    exit();
+                }
+               
             } else {
                 echo "<p style='color:red;'>Invalid credentials</p>";
             }
@@ -109,14 +120,6 @@ $conn->close();
                 <label class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
             </div>
-            <div class="form-label">
-                <label class="form-label">Role</label>
-                <select name="role" class="form-control" placeholder="Choose.." required>
-                    <option value="admin">Admin</option>
-                    <option value="doctor">Doctor</option>
-                    <option value="staff">Staff</option>
-                </select>
-                <br>
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
     </div>

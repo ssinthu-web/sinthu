@@ -1,32 +1,55 @@
-<!-- <?php
+<?php
 session_start();
-if (!isset($_SESSION['admin'])) {
-    header("Location: admin_login.php");
-    exit();
-}
 
+// Database connection
 $conn = new mysqli("localhost", "root", "", "carecompass_db");
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
+    $email = $_POST['email'];
     $specialization = $_POST['specialization'];
     $experience = $_POST['experience'];
     $contact = $_POST['contact'];
 
-    // Upload doctor image
+    // Image upload
     $image = $_FILES['image']['name'];
-    move_uploaded_file($_FILES["image"]["tmp_name"], "uploads/" . $image);
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($image);
+    $target_dir = "uploads/"; 
 
-    $sql = "INSERT INTO doctors (name, specialization, experience, contact, image) 
-            VALUES ('$name', '$specialization', '$experience', '$contact', '$image')";
+// Ensure the directory exists
+    if (!is_dir($target_dir)) {
+    mkdir($target_dir, 0777, true); // Create directory with full permissions
+    }
+
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+    echo "<p style='color:green;'>Doctor registered successfully!</p>";
+    } else {
+    echo "<p style='color:red;'>Error uploading the file.</p>";
+    }
+
+
+
+    // Insert data into the database
+    $sql = "INSERT INTO doctors (name, email, specialization, experience, contact, image) 
+            VALUES ('$name', '$email', '$specialization', '$experience', '$contact', '$image)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<p style='color:green;'>Doctor added successfully!</p>";
+        echo "<p style='color:green;'>Doctor registered successfully!</p>";
     } else {
         echo "Error: " . $conn->error;
     }
 }
-?> -->
+$conn->close();
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,17 +150,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="input-group">
                                     <input type="file" name="image" class="form-control" required>
                                     <div class="invalid-feedback">Please upload a profile image.</div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
-                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                        <i class="bi bi-eye-slash"></i>
-                                    </button>
-                                    <div class="invalid-feedback">Please enter a password.</div>
                                 </div>
                             </div>
 

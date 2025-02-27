@@ -24,7 +24,7 @@ if (!isset($_SESSION['admin'])) {
             <h4 class="text-center py-4">Admin Dashboard</h4>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="patient dashboard.html" class="nav-link text-white">Patient Management</a>
+                    <a href="patient_dashboard.php" class="nav-link text-white">Patient Management</a>
                 </li>
                 <li class="nav-item">
                     <a href="doctor dashboard.php" class="nav-link text-white">Doctor Management</a>
@@ -36,13 +36,10 @@ if (!isset($_SESSION['admin'])) {
                     <a href="billing_management.php" class="nav-link text-white">Billing Management</a>
                 </li>
                 <li class="nav-item">
-                    <a href="report_results.php" class="nav-link text-white">Reports & Results</a>
+                    <a href="Medical Report Dashboard.php" class="nav-link text-white">Reports & Results</a>
                 </li>
                 <li class="nav-item">
                     <a href="service_management.php" class="nav-link text-white">Service Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="booking_management.php" class="nav-link text-white">Booking Management</a>
                 </li>
                 <li class="nav-item">
                     <a href="logout.php"class="nav-link text-white">Logout</a>

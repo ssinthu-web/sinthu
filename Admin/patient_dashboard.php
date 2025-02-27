@@ -1,25 +1,12 @@
-<?php
-session_start();
-$conn = new mysqli("localhost", "root", "", "carecompass_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM doctors";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="bg-light" style="background: url('../image/admin.jpg') no-repeat center center/cover;">
 
     <div class="d-flex" style="min-height: 100vh;">
@@ -31,7 +18,7 @@ $result = $conn->query($sql);
                 <li class="nav-item"><a href="doctor dashboard.php" class="nav-link text-white">Doctor Management</a></li>
                 <li class="nav-item"><a href="staff_management.php" class="nav-link text-white">Staff Management</a></li>
                 <li class="nav-item"><a href="billing_management.php" class="nav-link text-white">Billing Management</a></li>
-                <li class="nav-item"><a href="report_results.php" class="nav-link text-white">Reports & Results</a></li>
+                <li class="nav-item"><a href="Medical Report Dashboard.php" class="nav-link text-white">Reports & Results</a></li>
                 <li class="nav-item"><a href="service_management.php" class="nav-link text-white">Service Management</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
             </ul>
@@ -59,35 +46,65 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </nav>
-            
-    <div class="container mt-5">
-        <h2 class="text-center">Doctor Dashboard</h2>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Specialization</th>
-                    <th>Experience</th>
-                    <th>Contact</th>
-                    <th>Image</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()) { ?>
-                <tr>
-                    <td><?= $row['id']; ?></td>
-                    <td><?= $row['name']; ?></td>
-                    <td><?= $row['email']; ?></td>
-                    <td><?= $row['specialization']; ?></td>
-                    <td><?= $row['experience']; ?> years</td>
-                    <td><?= $row['contact']; ?></td>
-                    <td><img src="uploads/<?= $row['image']; ?>" width="50" height="50"></td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+
+            <!-- Patient Dashboard -->
+            <div class="container mt-5">
+                <h2 class="text-center">Patient Dashboard</h2>
+                
+                <?php 
+                include 'fetch_patient.php'; 
+                ?>
+
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Patient Information</h5>
+                        <table class="table table-bordered">
+                        <thead class="table-dark">
+                             <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>DOB</th>
+                                <th>Gender</th>
+                                <th>Medical History</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>
+                                        <td>{$row['Name']}</td>
+                                        <td>{$row['Email']}</td>
+                                        <td>{$row['Phone']}</td>
+                                        <td>{$row['DOB']}</td>
+                                        <td>{$row['Gender']}</td>
+                                        <td>{$row['Medical_History']}</td>
+                                    </tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4' class='text-center'>No records found</td></tr>";
+                            }
+                            $conn->close();
+                            ?>
+                        </tbody>
+                           
+                        </table>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="appointments.php" class="btn btn-primary">View Appointments</a>
+                    <a href="billing.php" class="btn btn-warning">Billing & Payments</a>
+                    <a href="logout.php" class="btn btn-danger">Logout</a>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
