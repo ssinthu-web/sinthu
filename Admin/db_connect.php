@@ -1,13 +1,14 @@
 <?php
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; // Keep empty for XAMPP
-$database = "carecompass_db"; 
+// Database connection settings for XAMPP
+$host = "localhost";  // XAMPP uses localhost for MySQL
+$user = "root";       // Default username for MySQL in XAMPP
+$password = "";       // Default password for MySQL in XAMPP
+$dbname = "carecompass_db";  // Name of your database
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+// Create a connection to the database
+$conn = new mysqli($host, $user, $password, $dbname);
 
-// Check connection
+// Check if the connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
