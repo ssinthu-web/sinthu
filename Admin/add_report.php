@@ -1,13 +1,19 @@
 <?php
 include "db_connect.php";
 
+// Fetch all patients to populate the dropdown
+$patients_sql = "SELECT id, Name FROM patients";
+$patients_result = $conn->query($patients_sql);
+
 if (isset($_POST["submit"])) {
-    $patient_name = $_POST["patient_name"];
+    $patient_id = $_POST["patient_id"];  // Get the selected patient ID from the form
     $test_name = $_POST["test_name"];
     $result = $_POST["result"];
+    $date = $_POST["date"];
 
-    $stmt = $conn->prepare("INSERT INTO reports (patient_name, test_name, result) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $patient_name, $test_name, $result);
+    // Insert report with selected patient
+    $stmt = $conn->prepare("INSERT INTO medicalreports (patient_id, test_name, result, date) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("isss", $patient_id, $test_name, $result, $date);
 
     if ($stmt->execute()) {
         echo "<script>alert('✅ Report Added Successfully!'); window.location='Medical Report Dashboard.php';</script>";
@@ -33,8 +39,13 @@ if (isset($_POST["submit"])) {
         <h2 class="text-center">📝 Add Medical Report</h2>
         <form action="" method="POST">
             <div class="mb-3">
-                <label class="form-label">Patient Name</label>
-                <input type="text" name="patient_name" class="form-control" required>
+                <label class="form-label">Select Patient</label>
+                <select name="patient_id" class="form-select" required>
+                    <option value="">Select a Patient</option>
+                    <?php while ($patient = $patients_result->fetch_assoc()) { ?>
+                        <option value="<?php echo $patient['id']; ?>"><?php echo $patient['Name']; ?></option>
+                    <?php } ?>
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Test Name</label>
@@ -45,8 +56,8 @@ if (isset($_POST["submit"])) {
                 <input type="text" name="result" class="form-control" required>
             </div>
             <div class="mb-3">
-            <label for="date">Date:</label>
-            <input type="date" id="date" class="form-control" name="date" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" class="form-control" name="date" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Add Report</button>
             <a href="Medical Report Dashboard.php" class="btn btn-secondary">Back to Dashboard</a>

@@ -19,29 +19,30 @@ if (!isset($_SESSION['admin'])) {
     <title>Patient Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Adminstyles.css">
 </head>
-<body class="bg-light" style="background: url('../image/admin.jpg') no-repeat center center/cover;">
+<body class="bg-light" style="background: url('../image/A.jpg') no-repeat center center/cover;">
 
-    <div class="d-flex" style="min-height: 100vh;">
         <!-- Sidebar -->
-        <div class="d-flex flex-column p-3 text-white" style="width: 250px; background-color: #052c65; min-height: 100vh;">
-            <h4 class="text-center py-4"><a href="admin_dashboard.php" > Admin Dashboard</a></h4>
+        <div class="sidebar">
+            <h4>Admin Dashboard</h4>
             <ul class="nav flex-column">
-                <li class="nav-item"><a href="patient_dashboard.php" class="nav-link text-white">Patient Management</a></li>
-                <li class="nav-item"><a href="doctor_dashboard.php" class="nav-link text-white">Doctor Management</a></li>
-                <li class="nav-item"><a href="staff_dashboard.php" class="nav-link text-white">Staff Management</a></li>
-                <li class="nav-item"><a href="billing_management.php" class="nav-link text-white">Billing Management</a></li>
-                <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link text-white">Reports & Results</a></li>
-                <li class="nav-item"><a href="service_management.php" class="nav-link text-white">Service Management</a></li>
-                <li class="nav-item"><a href="logout.php" class="nav-link text-white">Logout</a></li>
+                <li class="nav-item"><a href="patient_dashboard.php" class="nav-link">Patient Management</a></li>
+                <li class="nav-item"><a href="doctor_dashboard.php" class="nav-link">Doctor Management</a></li>
+                <li class="nav-item"><a href="staff_dashboard.php" class="nav-link">Staff Management</a></li>
+                <li class="nav-item"><a href="billing_management.php" class="nav-link">Billing Management</a></li>
+                <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a></li>
+                <li class="nav-item"><a href="service_management.php" class="nav-link">Service Management</a></li>
+                <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
             </ul>
         </div>
         
         <!-- Main Content -->
-        <div class="flex-grow-1">
+        <div class="main-content">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #052c65;">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
                 <div class="container">
+                    <a class="navbar-brand" href="../index.php">Care Compass Hospital</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -113,6 +114,11 @@ if (!isset($_SESSION['admin'])) {
             </div>
         </div>
     </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+            <p>&copy; 2025 Care Compass Hospital. All rights reserved.</p>
+        </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
