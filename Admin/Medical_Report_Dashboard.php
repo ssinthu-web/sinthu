@@ -31,7 +31,7 @@ $patients_result = $conn->query($patients_sql);
                 <li class="nav-item"><a href="staff_dashboard.php" class="nav-link">Staff Management</a></li>
                 <li class="nav-item"><a href="billing_management.php" class="nav-link">Billing Management</a></li>
                 <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a></li>
-                <li class="nav-item"><a href="service_management.php" class="nav-link">Service Management</a></li>
+                <li class="nav-item"><a href="services_dashboard.php" class="nav-link">Service Management</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
             </ul>
         </div>
@@ -50,7 +50,7 @@ $patients_result = $conn->query($patients_sql);
 
             
     <div class="container mt-5">
-        <h2 class="text-center">📊 Medical Reports Dashboard</h2>
+        <h1 class="text-center text-white">📊 Medical Reports Dashboard</h1>
         <table class="table table-bordered mt-3">
             <thead class="table-dark">
                 <tr>
@@ -65,14 +65,14 @@ $patients_result = $conn->query($patients_sql);
             <tbody>
                 <?php while ($row = $result->fetch_assoc()) { ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['patient_name']; ?></td>
+                        <td><?php echo $row['report_id']; ?></td>
+                        <td><?php echo $row['patient_id']; ?></td>
                         <td><?php echo $row['test_name']; ?></td>
                         <td><?php echo $row['result']; ?></td>
                         <td><?php echo $row['date']; ?></td>
-              
                         <td>
-                            <a href="delete_report.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+    <a href="delete_report.php?id=<?php echo $row['report_id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+    <a href="billing_management.php?report_id=<?php echo $row['report_id']; ?>&patient_id=<?php echo $row['patient_id']; ?>" class="btn btn-primary btn-sm">Bill</a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -82,7 +82,7 @@ $patients_result = $conn->query($patients_sql);
     </div>
 
     <!-- Add Report Button -->
-    <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addReportModal">➕ Add Report</button>
+    <button href="add_report.php" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addReportModal">➕ Add Report</button>
 
     <!-- Add Report Modal -->
     <div class="modal fade" id="addReportModal" tabindex="-1" aria-labelledby="addReportModalLabel" aria-hidden="true">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "carecompass_db");
+$conn = new mysqli("localhost", "root", "", "carecompass");
 
 // Check connection
 if ($conn->connect_error) {
@@ -65,7 +65,7 @@ $conn->close();
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <!-- Logo and Brand Name -->
         <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -78,24 +78,12 @@ $conn->close();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../doctors.html">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../contact.php">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./admin_login.php">Registration</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../doctors.html">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.php">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./admin_login.php">Registration</a></li>
                 </ul>
             </div>
         </div>

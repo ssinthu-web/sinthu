@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
           <!-- Logo and Brand Name -->
           <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -21,24 +21,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="./Admin/admin_login.php">Registration</a>
-              </li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Admin/admin_login.php">Registration</a></li>
                 </ul>
             </div>
         </div>
@@ -61,14 +49,10 @@
           </div>
           <div class="col-md-6">
             <h2>Our Story</h2>
-            <p>
-              Founded with a passion for providing exceptional healthcare services, NCH Jaffna has grown to become a trusted name in the region.
-              Our commitment to patient-centered care, innovative treatment, and compassionate service has shaped our legacy.
-            </p>
-            <p>
-              From humble beginnings to a state-of-the-art facility, our journey is a testament to the dedication and hard work of our team.
-              We continue to embrace advancements in medicine while upholding our core values of integrity, excellence, and empathy.
-            </p>
+            <p>Founded with a passion for providing exceptional healthcare services, NCH Jaffna has grown to become a trusted name in the region.
+              Our commitment to patient-centered care, innovative treatment, and compassionate service has shaped our legacy.</p>
+            <p>From humble beginnings to a state-of-the-art facility, our journey is a testament to the dedication and hard work of our team.
+              We continue to embrace advancements in medicine while upholding our core values of integrity, excellence, and empathy.</p>
           </div>
         </div>
       </div>
@@ -80,17 +64,13 @@
         <div class="row">
           <div class="col-md-6 mb-4">
             <h3>Our Mission</h3>
-            <p>
-              To deliver high-quality, affordable healthcare with a focus on patient safety and satisfaction.
-              We strive to be a leader in medical innovation and compassionate care.
-            </p>
+            <p>To deliver high-quality, affordable healthcare with a focus on patient safety and satisfaction.
+              We strive to be a leader in medical innovation and compassionate care.</p>
           </div>
           <div class="col-md-6 mb-4">
             <h3>Our Vision</h3>
-            <p>
-              To be the healthcare provider of choice in the region by continually improving our services,
-              embracing technology, and fostering a culture of excellence and respect.
-            </p>
+            <p>To be the healthcare provider of choice in the region by continually improving our services,
+              embracing technology, and fostering a culture of excellence and respect.</p>
           </div>
         </div>
       </div>

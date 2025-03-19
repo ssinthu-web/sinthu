@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                 <li class="nav-item"><a href="staff_dashboard.php" class="nav-link">Staff Management</a></li>
                 <li class="nav-item"><a href="billing_management.php" class="nav-link">Billing Management</a></li>
                 <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a></li>
-                <li class="nav-item"><a href="service_management.php" class="nav-link">Service Management</a></li>
+                <li class="nav-item"><a href="services_dashboard.php" class="nav-link">Service Management</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
             </ul>
         </div>
@@ -59,7 +59,6 @@ $result = $conn->query($sql);
                 <input type="text" name="search" class="form-control me-2" placeholder="Search by name, specialization, or email..." value="<?php echo $search; ?>">
                 <button type="submit" class="btn btn-primary">🔍 Search</button>
             </form>
-
             <!-- Add Doctor Button -->
             <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addDoctorModal">➕ Add Doctor</button>
 
@@ -73,7 +72,7 @@ $result = $conn->query($sql);
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Experience (Years)</th>
-                    <th>User ID</th> <!-- Display userId -->
+                    <th>User ID</th> 
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -86,7 +85,7 @@ $result = $conn->query($sql);
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['contact']; ?></td>
                         <td><?php echo $row['experience']; ?></td>
-                        <td><?php echo $row['userId']; ?></td> <!-- Show userId -->
+                        <td><?php echo $row['userId']; ?></td>
                         <td>
                             <a href="delete_doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                         </td>

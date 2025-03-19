@@ -23,27 +23,13 @@
         <div class="sidebar">
             <h4>Admin Dashboard</h4>
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a href="patient_dashboard.php" class="nav-link">Patient Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="doctor_dashboard.php" class="nav-link">Doctor Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="staff_dashboard.php" class="nav-link">Staff Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="billing_management.php" class="nav-link">Billing Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services_dashboard.php" class="nav-link">Service Management</a>
-                </li>
-                <li class="nav-item">
-                    <a href="logout.php" class="nav-link">Logout</a>
-                </li>
+                <li class="nav-item"><a href="patient_dashboard.php" class="nav-link">Patient Management</a></li>
+                <li class="nav-item"><a href="doctor_dashboard.php" class="nav-link">Doctor Management</a></li>
+                <li class="nav-item"><a href="staff_dashboard.php" class="nav-link">Staff Management</a></li>
+                <li class="nav-item"><a href="billing_management.php" class="nav-link">Billing Management</a></li>
+                <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a></li>
+                <li class="nav-item"><a href="services_dashboard.php" class="nav-link">Service Management</a></li>
+                <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
             </ul>
         </div>
 

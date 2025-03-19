@@ -4,10 +4,8 @@ if (!isset($_SESSION['admin'])) {
     header("Location: admin_login.php");
     exit();
 }
+include 'db_connect.php';  
 
-include 'db_connect.php';  // Include the connection to your database
-
-// Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $name = $_POST['name'];
@@ -16,31 +14,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dob = $_POST['dob'];
     $gender = $_POST['gender'];
     $medical_history = $_POST['medical_history'];
-    $userId = 1;  // Ensure this userId exists in the 'user' table
+    $userId = 1; 
 
-    // Check if the userId exists in the 'user' table
     $checkUser = "SELECT id FROM user WHERE id = ?";
     if ($stmt = $conn->prepare($checkUser)) {
-        $stmt->bind_param("i", $userId);  // Check if the userId exists in the user table
+        $stmt->bind_param("i", $userId);  
         $stmt->execute();
         $stmt->store_result();
 
-        // If the userId doesn't exist in the 'user' table, show an error
         if ($stmt->num_rows == 0) {
             $error_message = "Error: The selected userId does not exist.";
             $stmt->close();
             $conn->close();
             exit();
         }
-
-        // Insert patient data into the database if userId is valid
         $sql = "INSERT INTO patients (Name, Email, Phone, DOB, Gender, Medical_History, userId) 
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         if ($stmt = $conn->prepare($sql)) {
             $stmt->bind_param("ssssssi", $name, $email, $phone, $dob, $gender, $medical_history, $userId);
             if ($stmt->execute()) {
-                // Redirect to patient management page after success
                 header("Location: patient_dashboard.php?status=patient_added");
                 exit();
             } else {

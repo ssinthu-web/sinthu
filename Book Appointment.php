@@ -42,7 +42,7 @@ if (isset($_POST['submit'])){
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="./image/logo.png" alt="Hospital Logo" width="150" height="120" >
@@ -54,24 +54,12 @@ if (isset($_POST['submit'])){
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="doctors.html">Doctors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./Admin/admin_login.php">Registration</a>
-                </li>
+                <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="./Admin/admin_login.php">Registration</a></li>
             </ul>
         </div>
     </div>
@@ -90,20 +78,15 @@ if (isset($_POST['submit'])){
                 <div class="col-md-6">
                     <form method="POST">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" class="form-control" name="name" placeholder="Enter your name" required>
-                        <br>
+                        <input type="text" id="name" class="form-control" name="name" placeholder="Enter your name" required><br>
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required>
-                        <br>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required><br>
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your Phone number" required>
-                        <br>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your Phone number" required><br>
                         <label for="date">Date:</label>
-                        <input type="date" id="date" class="form-control" name="date" required>
-                        <br>
+                        <input type="date" id="date" class="form-control" name="date" required><br>
                         <label for="time">Time:</label>
-                        <input type="time" id="time" class="form-control" name="time" required>
-                        <br>
+                        <input type="time" id="time" class="form-control" name="time" required><br>
                         <label for="doctor">Select Doctor:</label>
                         <select id="doctor" name="doctor" class="form-control" required>
                         <option value="Dr. John Doe">Dr. John Doe</option>

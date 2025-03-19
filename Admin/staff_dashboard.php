@@ -54,17 +54,12 @@ $result = $conn->query($sql);
 
          <div class="container mt-5">
             <h2 class="text-center">🏥 Medical Staff Dashboard</h2>
-
-            <!-- Search Bar -->
             <form action="staff_dashboard.php" method="GET" class="mb-3 d-flex">
                 <input type="text" name="search" class="form-control me-2" placeholder="Search by name, role, or email..." value="<?php echo $search; ?>">
                 <button type="submit" class="btn btn-primary">🔍 Search</button>
             </form>
 
-            <!-- Add Staff Button -->
             <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addStaffModal">➕ Add Staff</button>
-
-            <!-- Staff Table -->
             <table class="table table-bordered mt-3">
                 <thead class="table-dark">
                     <tr>

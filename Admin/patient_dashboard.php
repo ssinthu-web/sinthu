@@ -32,7 +32,7 @@ if (!isset($_SESSION['admin'])) {
                 <li class="nav-item"><a href="staff_dashboard.php" class="nav-link">Staff Management</a></li>
                 <li class="nav-item"><a href="billing_management.php" class="nav-link">Billing Management</a></li>
                 <li class="nav-item"><a href="medical_report_dashboard.php" class="nav-link">Reports & Results</a></li>
-                <li class="nav-item"><a href="service_management.php" class="nav-link">Service Management</a></li>
+                <li class="nav-item"><a href="services_dashboard.php" class="nav-link">Service Management</a></li>
                 <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
             </ul>
         </div>
@@ -95,6 +95,7 @@ if (!isset($_SESSION['admin'])) {
                                         </td>
                                     </tr>";
                                 }
+                                
                             } else {
                                 echo "<tr><td colspan='7' class='text-center'>No records found</td></tr>";
                             }

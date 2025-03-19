@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <!-- Logo and Brand Name -->
         <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -49,24 +49,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="doctors.html">Doctors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="contact.php">Contact Us</a>
-                <li class="nav-item">
-                        <a class="nav-link" href="./Admin/admin_login.php">Registration</a>
-                </li>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.php">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="./Admin/admin_login.php">Registration</a></li>
             </ul>
         </div>
     </div>
@@ -106,20 +94,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <!-- Contact Details and Map -->
                <div class="col-md-6">
                 <h3>Contact Details</h3>
-                <p>
-                    <strong>Address:</strong><br>
-                    CCH Colombo,<br>
-                    123 Hospital Road,<br>
-                    Colombo, Sri Lanka.
-                </p>
-                <p>
-                    <strong>Phone:</strong><br>
-                    +94 21 222 2222
-                </p>
-                <p>
-                    <strong>Email:</strong><br>
-                    info@cchcolombo.com
-                </p>
+                <p><strong>Address:</strong><br>CCH Colombo,<br>123 Hospital Road,<br>Colombo, Sri Lanka.</p>
+                <p><strong>Phone:</strong><br>+94 21 222 2222</p>
+                <p><strong>Email:</strong><br>info@cchcolombo.com</p>
 
                 <h3 class="mt-4">Location</h3>
                 <!-- Google Maps Embed -->
